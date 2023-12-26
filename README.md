@@ -6,7 +6,7 @@ A batch script used to automate backups, compressing and encrypting the data, us
 - A Bitwarden account
 - A Bitwarden item to securely store the password for the backup process (easily created through the Desktop Application)
 - The [Bitwarden CLI](https://bitwarden.com/help/cli/)
-- And lastly [7Zip](https://www.7-zip.org/)
+- And lastly [7-Zip](https://www.7-zip.org/)
 
 
 ## How does the script work?
@@ -49,3 +49,8 @@ start /wait cmd /c bw logout
 
 endlocal
 ```
+
+## Here is a preview with images:
+
+![Script_Preview_01](https://github.com/DarioKDR/Automatic-Backups/assets/110359877/7b483de2-86c8-43f9-8676-3ea01ee56cf6)
+![Script_Preview_02](https://github.com/DarioKDR/Automatic-Backups/assets/110359877/ea74eb54-9805-4006-b021-dc5b1c9a3350)
