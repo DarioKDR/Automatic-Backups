@@ -1,23 +1,39 @@
 # Automatic-Backups
-A script used to automate backups using the Bitwarden CLI and 7-Zip.
+A batch script used to automate backups, compressing and encrypting the data, using the Bitwarden CLI and 7-Zip.
 
-# Requirements:
+## Requirements:
 - Windows 10/11
 - A Bitwarden account
+- A Bitwarden item to securely store the password for the backup process (easily created through the Desktop Application)
 - The [Bitwarden CLI](https://bitwarden.com/help/cli/)
-- [7Zip](https://www.7-zip.org/)
+- And lastly [7Zip](https://www.7-zip.org/)
 
-# The actual script:
-```
+
+## How does the script work?
+1. The script reads a list of variables.
+2. Asks the user for Bitwarden Credentials.
+3. After logging in, the backup will request the master password again (to unlock the vault).
+4. The backup is created using the password from the item set inside the script.
+5. After the backup is finished, the Bitwarden account will log out.
+
+## The actual script:
+```batch
 @echo off
 setlocal enabledelayedexpansion
 
-set "folderPath=C:\Users\Kodoro\Desktop\Kodoro"
-set "zipPath=C:\Program Files\7-Zip\7z.exe"
-set "outputPath=C:\Users\Kodoro\Desktop\Archive.7z"
-set "bitwardenItemName=zzMasterBackup"
+:: Modify the following variables to your personal needs:
 
-echo This is a script for automatic backups. Made by Kodoro
+:: "folderPath"= Path of the files you want to backup
+:: "zipPath"= Path where "7z.exe" is installed
+:: "outputPath"= Path where the backup file (including filename) will be created, for example: "C:\BackupsFolder\Backup01.7z"
+:: "bitwardenItemName"= The name of the item where your password is stored (This item has to be created beforehand) easily done with the Desktop Application.
+
+set "folderPath=C:\"
+set "zipPath=C:\Program Files\7-Zip\7z.exe"
+set "outputPath=C:\Backups"
+set "bitwardenItemName=ItemExample"
+
+echo This is a script used to automate backups using the Bitwarden CLI and 7-Zip.
 echo Press any key to log in to Bitwarden...
 pause > nul
 start /wait cmd /c bw login
