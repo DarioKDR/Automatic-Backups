@@ -2,7 +2,7 @@
 A batch script used to automate backups, compressing and encrypting the data, using the Bitwarden CLI and 7-Zip.
 
 ## Requirements:
-- Windows 10/11
+- Windows 11
 - A Bitwarden account
 - A Bitwarden item to securely store the password for the backup process (easily created through the Desktop Application)
 - The [Bitwarden CLI](https://bitwarden.com/help/cli/)
